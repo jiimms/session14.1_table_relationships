@@ -1,1 +1,5 @@
-
+Create two tables. Company and Employee. 
+Add the following relationships 
+--Company has many employees 
+--Employee belongs to company 
+--Display the Employees in the company page 
