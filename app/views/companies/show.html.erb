@@ -1,0 +1,21 @@
+<p  class = "notice"><%= notice %></p>
+<h1><%= @company.title%>
+<small>:::<%= @company.description%></small></h1>
+<table>
+	<tr>
+		<th width = 200px>Employee Id</th>
+		<th width = 230px, align = "left">Employee Name</th>
+	</tr>
+	<% @company.employees.each do |ce|%>
+	<tr>
+		<td align = "center">
+			<%=ce.id%> 
+		</td>
+		<td align = "left">
+			<%=ce.name%>
+		</td>
+	</tr>
+	<%end%>
+</table>
+
+<p><%= link_to "Edit/Add Employees", edit_company_path(@company)%></p>

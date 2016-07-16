@@ -1,0 +1,14 @@
+<h2>Edit Comapny Name or Add Employees</h2>
+
+<%= form_for @company, html: {mutipart: true}  do | f |%>
+  
+  <%= f.label :title%>
+  <%= f.text_field :title %>
+  <h3>Employees</h3>
+  <%= f.fields_for :employees do | emp |%>
+  	<%= render 'employee_fields', f: emp%>
+  	<br>
+  <%end%>
+  <div><%=link_to_add_association 'Add Employee', f, :employees%></div>
+  <%= f.submit %></td>
+<%end%>

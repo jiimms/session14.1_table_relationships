@@ -1,0 +1,24 @@
+
+
+<h1>Add Company</h1>
+<% if @company.errors.any?%>
+	<% @company.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+  <% end %>
+<%end%>
+
+<%= form_for @company, html: {mutipart: true}  do | f |%>
+  
+  <%= f.label :title%>
+  <%= f.text_field :title %>
+
+  <%= f.label :description%>
+  <%= f.text_field :description %>
+  <h3>Employees</h3>
+  <%= f.fields_for :employees do | emp |%>
+  	<%= render 'employee_fields', f: emp%>
+  	<div><%=link_to_add_association 'Add Employee', f, :employees%></div><br>
+  <%end%>
+  
+  <%= f.submit %></td>
+<%end%>

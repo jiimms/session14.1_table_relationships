@@ -1,0 +1,10 @@
+<p class = "notice"><%= notice %></p>
+
+<%@companies.each do |c|%>
+<div class ="links">
+	<h1><%= c.title %> </h1>
+	<span class ="bold"><%= link_to "Employees List", company_path(c)%></span>
+	<span class ="bold"><%= link_to "Add/Edit Employees", edit_company_path(c)%></span>
+	<span class ="bold"><%= link_to "Delete", c, method: :delete, data: {confirm: "Are you sure?? All employee records will be deleted"}%></span>
+</div>
+<%end%>

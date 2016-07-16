@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Session141TableRelationships</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<%= render 'layouts/links'%>
+	<div class = "wrapper">
+		<p>Create two tables. Company and Employee. Add the following relationships :
+ Company has many employees and Employee belongs to company <br> Display the Employees in the company page </p>
+		<%= yield %>
+	</div>
+
+</body>
+</html>
